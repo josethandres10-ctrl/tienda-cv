@@ -1,62 +1,62 @@
-print("bienvenido a la tienda virtual") 
-historial = {}
-pregunta =  input("Para inciar el registro de una nueva venta, escriba 'si': ").strip().lower() #strip() elimina los espacios en blanco al inicio y al final de la cadena, lower() convierte la cadena a minúsculas para facilitar la comparación con "si" o "yes"
-status = ("si", "yes") 
-while pregunta in status : #while ciclo repetitivo, se ejecuta mientras la condición sea verdadera, en este caso, mientras la variable pregunta sea igual a "si" o "yes"    
-    total_valor = 0
+print("Welcome to the virtual store") 
+history = {}
+question =  input("To start registering a new sale, type 'yes': ").strip().lower() # strip() removes whitespace at the beginning and end of the string, lower() converts the string to lowercase for easier comparison with "yes"
+status = ("yes",) 
+while question in status : # while loop, executes as long as the condition is true, in this case, while the question variable is equal to "yes"    
+    total_value = 0
     try:      
        
        
-        producto = input("ingrese el nombre del producto: ")
+        product = input("Enter the product name: ")
        
         
-   # CICLO PARA VALIDAR PRECIO
+   # LOOP TO VALIDATE PRICE
         while True:
                 try:
-                    precio = int(input("Ingrese el precio del producto: "))
+                    price = int(input("Enter the product price: "))
 
-                    if precio <= 0:
-                        print("Error: el precio debe ser mayor que 0")
+                    if price <= 0:
+                        print("Error: price must be greater than 0")
                     else:
                         break
 
                 except ValueError:
-                    print("Error: debe ingresar un valor numérico válido para el precio")        
+                    print("Error: you must enter a valid numeric value for the price")        
         
-   # CICLO PARA VALIDAR CANTIDAD
+   # LOOP TO VALIDATE QUANTITY
         while True:
                 try:
-                    cantidad = int(input("Ingrese la cantidad del producto: "))
+                    quantity = int(input("Enter the product quantity: "))
 
-                    if cantidad <= 0:
-                        print("Error: la cantidad debe ser mayor que 0")
+                    if quantity <= 0:
+                        print("Error: quantity must be greater than 0")
                     else:
                         break
 
                 except ValueError:
-                    print("Error: debe ingresar un valor numérico válido para la cantidad")       
-        total = precio * cantidad
+                    print("Error: you must enter a valid numeric value for the quantity")       
+        total = price * quantity
        
-        historial[producto] = {"precio": precio, "cantidad": cantidad, "total": total} 
+        history[product] = {"price": price, "quantity": quantity, "total": total} 
        
-        total_valor += historial[producto]["total"]
+        total_value += history[product]["total"]
        
-        pregunta = input("¿desea comprar otro producto? (si/no): ").lower()
-        if pregunta == "no" or pregunta == "nope":
+        question = input("Do you want to buy another product? (yes/no): ").lower()
+        if question == "no" or question == "nope":
        
-            print(f"el total a pagar por {cantidad} {producto} es: {total} and el valor total de su compra es: {total_valor}")
-            print("gracias por su compra, vuelva pronto")
+            print(f"The total to pay for {quantity} {product} is: {total} and the total value of your purchase is: {total_value}")
+            print("Thank you for your purchase, see you soon")
             break
     except ValueError:
-        print("Error: Por favor, ingrese un valor numérico válido para el precio y la cantidad. Producto no registrado.")
+        print("Error: Please enter a valid numeric value for the price and quantity. Product not registered.")
 
-print(("Fin del programa"))
-print("Historial de compras:")
+print("End of program")
+print("Purchase history:")
 total_general = 0
-for producto, detalles in historial.items():
-    total_general+= detalles["total"]
-    print(f"Producto: {producto}, Precio: {detalles['precio']}, Cantidad: {detalles['cantidad']}")  
-print(f"Total general de la compra: {total_general}")
+for product, details in history.items():
+    total_general+= details["total"]
+    print(f"Product: {product}, Price: {details['price']}, Quantity: {details['quantity']}")  
+print(f"Total purchase amount: {total_general}")
 
 
 
