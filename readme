@@ -1,0 +1,66 @@
+# Virtual Store System
+
+## Overview
+A Python-based virtual store application that allows users to register sales, add multiple products, validate inputs, and view purchase history with total calculations.
+
+## Features
+- **Product Registration**: Add product names, prices, and quantities
+- **Input Validation**: Ensures prices and quantities are positive integers
+- **Purchase History**: Tracks all items purchased with individual totals
+- **Total Calculation**: Automatically calculates totals per product and overall purchase amount
+- **User-Friendly Interface**: Interactive command-line prompts for easy navigation
+
+## Project Structure
+
+### main.py
+The main application file that runs the virtual store system:
+- Welcomes users to the store
+- Accepts product information (name, price, quantity)
+- Validates prices and quantities with error handling
+- Stores all products in a dictionary structure
+- Displays purchase history with final totals
+- Supports multiple product additions per session
+
+### file.py
+Code documentation and summary for the virtual store system with key concepts and structure overview.
+
+### producto.py
+Price validation utility module in Spanish with validation logic for numeric input.
+
+## How to Use
+
+1. Run the application:
+   ```
+   python3 main.py
+   ```
+
+2. When prompted, type 'yes' to start registering a new sale
+
+3. Enter product details:
+   - Product name
+   - Product price (must be positive integer)
+   - Product quantity (must be positive integer)
+
+4. Choose to add another product or finish the purchase
+
+5. Review the purchase history and total amount
+
+## Key Concepts Used
+
+- **Dictionary**: Stores product data as key-value pairs
+- **try-except blocks**: Handles invalid numeric input (ValueError)
+- **while loops**: Validates input until correct format is received
+- **f-strings**: Formats output with embedded variables
+- **.strip().lower()**: Cleans and normalizes user input
+- **Compound operators**: Uses += for accumulating totals
+
+## Error Handling
+
+The system includes robust error handling for:
+- Non-numeric price entries
+- Non-numeric quantity entries
+- Zero or negative prices
+- Zero or negative quantities
+
+All errors display user-friendly messages and re-prompt for correct input.
+

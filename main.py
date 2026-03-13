@@ -4,14 +4,11 @@ question =  input("To start registering a new sale, type 'yes': ").strip().lower
 status = ("yes",) 
 while question in status : # while loop, executes as long as the condition is true, in this case, while the question variable is equal to "yes"    
     total_value = 0
-    try:      
-       
-       
-        product = input("Enter the product name: ")
-       
-        
+    try:            
+        product = input("Enter the product name: ")    
    # LOOP TO VALIDATE PRICE
-        while True:
+        price = True 
+        while price:
                 try:
                     price = int(input("Enter the product price: "))
 
@@ -22,9 +19,9 @@ while question in status : # while loop, executes as long as the condition is tr
 
                 except ValueError:
                     print("Error: you must enter a valid numeric value for the price")        
-        
    # LOOP TO VALIDATE QUANTITY
-        while True:
+        quantity = True
+        while quantity:
                 try:
                     quantity = int(input("Enter the product quantity: "))
 

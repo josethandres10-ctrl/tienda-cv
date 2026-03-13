@@ -9,8 +9,7 @@ PRODUCTO.PY - Price Validation Utility
 Validates that users enter positive numeric prices.
 
 ================================================================================
-"""
-
+""" 
 # MAIN APPLICATION FLOW
 print("Welcome to the virtual store")  # Display welcome message
 history = {}  # Dictionary to store: {product: {price, quantity, total}}

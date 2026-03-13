@@ -9,4 +9,5 @@ while True:
                 break
         
         except ValueError:
-            print("Error: ingrese un valor numérico válido para el precio")
+            print("Error: ingrese un valor numérico válido para el precio") 
+            
